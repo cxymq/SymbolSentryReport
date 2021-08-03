@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -687,7 +688,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1095"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -703,11 +704,180 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yqe-L1-Ou6">
+                                <rect key="frame" x="13" y="473" width="161" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mJq-LY-MI6"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="选择 sentry json 文件" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cV3-LK-dvF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectJsonClick:" target="XfG-lQ-9wD" id="aMa-01-EsV"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iPD-P3-Us6">
+                                <rect key="frame" x="20" y="454" width="920" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dfh-tC-bRD"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="yRC-8h-cbw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sN7-7t-HLq">
+                                <rect key="frame" x="13" y="417" width="131" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Hlc-IN-SWA"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="选择 DYSM 文件" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aUo-I8-Ouq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="selectDYSMClick:" target="XfG-lQ-9wD" id="nWD-YO-hEI"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ogc-1U-ltt">
+                                <rect key="frame" x="20" y="398" width="920" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3bt-Fi-YUo"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="VKl-be-222">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oV6-b3-6SH">
+                                <rect key="frame" x="190" y="473" width="75" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3CC-HK-mKA"/>
+                                    <constraint firstAttribute="width" constant="61" id="ir7-g6-T41"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="转换" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XXB-sZ-ao6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="jsonConvertClick:" target="XfG-lQ-9wD" id="hbe-Fl-5x6"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-Rx-FEF">
+                                <rect key="frame" x="281" y="473" width="75" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="Awr-zv-56O"/>
+                                    <constraint firstAttribute="height" constant="20" id="LLz-ou-CVw"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="打开" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wg6-Pl-fhg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="jsonShowClick:" target="XfG-lQ-9wD" id="bhq-7O-oTp"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oHo-ho-hPp">
+                                <rect key="frame" x="191" y="417" width="75" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="8Vp-hZ-bKH"/>
+                                    <constraint firstAttribute="width" constant="61" id="BAi-DF-GS9"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="转换" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="e5D-wn-xyH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dysmConvertClick:" target="XfG-lQ-9wD" id="Uvc-e2-8Fk"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zx0-QH-gCk">
+                                <rect key="frame" x="282" y="417" width="75" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="5Gw-Bh-GO3"/>
+                                    <constraint firstAttribute="height" constant="20" id="7fa-4C-qK7"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="打开" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rp8-sn-rB6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dysmShowClick:" target="XfG-lQ-9wD" id="FnS-IF-oTe"/>
+                                </connections>
+                            </button>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piQ-xX-BZ8">
+                                <rect key="frame" x="20" y="20" width="920" height="358"/>
+                                <clipView key="contentView" drawsBackground="NO" id="Ihi-54-5aW">
+                                    <rect key="frame" x="0.0" y="0.0" width="920" height="358"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="nWU-QD-z6n">
+                                            <rect key="frame" x="0.0" y="0.0" width="920" height="358"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="920" height="358"/>
+                                            <size key="maxSize" width="920" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="JWs-Eh-ewd">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="u8n-uc-40L">
+                                    <rect key="frame" x="904" y="0.0" width="16" height="358"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hqh-Rx-FEF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="57Z-1P-TMG"/>
+                            <constraint firstItem="oV6-b3-6SH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="5UI-1a-tbI"/>
+                            <constraint firstItem="Zx0-QH-gCk" firstAttribute="leading" secondItem="oHo-ho-hPp" secondAttribute="trailing" constant="30" id="6gt-sD-It3"/>
+                            <constraint firstItem="oV6-b3-6SH" firstAttribute="leading" secondItem="yqe-L1-Ou6" secondAttribute="trailing" constant="30" id="6vg-np-GeQ"/>
+                            <constraint firstItem="piQ-xX-BZ8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="AI0-QP-nVj"/>
+                            <constraint firstItem="oHo-ho-hPp" firstAttribute="leading" secondItem="sN7-7t-HLq" secondAttribute="trailing" constant="61" id="EGv-wC-4Eo"/>
+                            <constraint firstAttribute="trailing" secondItem="piQ-xX-BZ8" secondAttribute="trailing" constant="20" id="HZP-Ae-8DZ"/>
+                            <constraint firstAttribute="bottom" secondItem="piQ-xX-BZ8" secondAttribute="bottom" constant="20" id="HzN-Ds-K0m"/>
+                            <constraint firstItem="sN7-7t-HLq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="LWE-hz-Haa"/>
+                            <constraint firstAttribute="trailing" secondItem="iPD-P3-Us6" secondAttribute="trailing" constant="20" id="McE-4c-8WZ"/>
+                            <constraint firstItem="iPD-P3-Us6" firstAttribute="top" secondItem="yqe-L1-Ou6" secondAttribute="bottom" constant="5" id="T1p-6Y-D0V"/>
+                            <constraint firstItem="hqh-Rx-FEF" firstAttribute="leading" secondItem="oV6-b3-6SH" secondAttribute="trailing" constant="30" id="VGJ-km-HWH"/>
+                            <constraint firstItem="Zx0-QH-gCk" firstAttribute="top" secondItem="iPD-P3-Us6" secondAttribute="bottom" constant="10" id="WTj-rd-Q3i"/>
+                            <constraint firstItem="ogc-1U-ltt" firstAttribute="top" secondItem="sN7-7t-HLq" secondAttribute="bottom" constant="5" id="Ye3-zp-iib"/>
+                            <constraint firstItem="yqe-L1-Ou6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="bDN-DX-7vB"/>
+                            <constraint firstItem="sN7-7t-HLq" firstAttribute="top" secondItem="iPD-P3-Us6" secondAttribute="bottom" constant="10" id="fYp-4A-jiB"/>
+                            <constraint firstItem="yqe-L1-Ou6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="jeg-hy-ZXZ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sN7-7t-HLq" secondAttribute="trailing" constant="20" symbolic="YES" id="kSy-zW-eDO"/>
+                            <constraint firstItem="ogc-1U-ltt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="o5E-mW-v0T"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yqe-L1-Ou6" secondAttribute="trailing" constant="20" symbolic="YES" id="poF-WA-tb7"/>
+                            <constraint firstItem="piQ-xX-BZ8" firstAttribute="top" secondItem="ogc-1U-ltt" secondAttribute="bottom" constant="20" id="r6l-kC-3ue"/>
+                            <constraint firstItem="oHo-ho-hPp" firstAttribute="top" secondItem="iPD-P3-Us6" secondAttribute="bottom" constant="10" id="rJF-6G-AIt"/>
+                            <constraint firstItem="iPD-P3-Us6" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="xZj-6u-QNN"/>
+                            <constraint firstAttribute="trailing" secondItem="ogc-1U-ltt" secondAttribute="trailing" constant="20" id="zzp-5p-9gr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dysmConvertBtn" destination="oHo-ho-hPp" id="JzG-TC-ZcL"/>
+                        <outlet property="dysmPathTextField" destination="ogc-1U-ltt" id="iWa-gw-5np"/>
+                        <outlet property="dysmShowBtn" destination="Zx0-QH-gCk" id="DSa-yl-Fx5"/>
+                        <outlet property="jsonConvertBtn" destination="oV6-b3-6SH" id="FdU-4p-ozh"/>
+                        <outlet property="jsonPathTextField" destination="iPD-P3-Us6" id="O17-CI-Rmg"/>
+                        <outlet property="jsonShowBtn" destination="hqh-Rx-FEF" id="6ay-mY-D7L"/>
+                        <outlet property="selectDYSMBtn" destination="sN7-7t-HLq" id="55k-nt-UCE"/>
+                        <outlet property="selectJsonBtn" destination="yqe-L1-Ou6" id="Tdt-bO-4Pm"/>
+                        <outlet property="symbolTextView" destination="piQ-xX-BZ8" id="m57-Go-cMj"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
