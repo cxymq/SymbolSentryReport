@@ -8,6 +8,7 @@
 #import "ViewController.h"
 
 #import "KSCrashReportFilterAppleFmt.h"
+#import <Python/Python.h>
 
 @interface ViewController () {
     NSString *_dest_json_path;
@@ -121,9 +122,11 @@
 }
 
 - (IBAction)dysmConvertClick:(id)sender {
+    
 }
 
 - (IBAction)dysmShowClick:(id)sender {
+    [[NSWorkspace sharedWorkspace] selectFile:nil inFileViewerRootedAtPath:_dest_log_path];
 }
 
 - (void)showAlertWithText:(NSString *)text {

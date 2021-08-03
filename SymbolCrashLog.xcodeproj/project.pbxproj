@@ -337,6 +337,10 @@
 		AF5E67B226B416FD004BD0CC /* ManglingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ManglingUtils.cpp; sourceTree = "<group>"; };
 		AF5E67B326B416FD004BD0CC /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AF5E681026B41784004BD0CC /* crash-report.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "crash-report.json"; sourceTree = "<group>"; };
+		AF5E6E4826B96870004BD0CC /* libPython.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPython.a; path = "SymbolCrashLog/Python-3.6-macOS-support.b14/Python/libPython.a"; sourceTree = "<group>"; };
+		AF5E6E4926B96883004BD0CC /* libxz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libxz.a; path = "SymbolCrashLog/Python-3.6-macOS-support.b14/XZ/libxz.a"; sourceTree = "<group>"; };
+		AF5E6E4A26B96891004BD0CC /* libbzip2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbzip2.a; path = "SymbolCrashLog/Python-3.6-macOS-support.b14/BZip2/libbzip2.a"; sourceTree = "<group>"; };
+		AF5E6E4B26B9689D004BD0CC /* libOpenSSL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOpenSSL.a; path = "SymbolCrashLog/Python-3.6-macOS-support.b14/OpenSSL/libOpenSSL.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +375,7 @@
 				AF5E66B826B4162F004BD0CC /* SymbolCrashLogTests */,
 				AF5E66C326B4162F004BD0CC /* SymbolCrashLogUITests */,
 				AF5E66A026B4162D004BD0CC /* Products */,
+				AF5E6E4726B96870004BD0CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -741,6 +746,17 @@
 				AF5E67B226B416FD004BD0CC /* ManglingUtils.cpp */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		AF5E6E4726B96870004BD0CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF5E6E4B26B9689D004BD0CC /* libOpenSSL.a */,
+				AF5E6E4A26B96891004BD0CC /* libbzip2.a */,
+				AF5E6E4926B96883004BD0CC /* libxz.a */,
+				AF5E6E4826B96870004BD0CC /* libPython.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1131,10 +1147,23 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EJ429UWLN6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/Python/Headers\"",
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/BZip2/Headers\"",
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/OpenSSL/Headers\"",
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/XZ/Headers\"",
+				);
 				INFOPLIST_FILE = SymbolCrashLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/Python",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/XZ",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/OpenSSL",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/BZip2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.missevan.SymbolCrashLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1151,10 +1180,23 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EJ429UWLN6;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/Python/Headers\"",
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/BZip2/Headers\"",
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/OpenSSL/Headers\"",
+					"\"$(SRCROOT)/SymbolCrashLog/Python-3.6-macOS-support.b14/XZ/Headers\"",
+				);
 				INFOPLIST_FILE = SymbolCrashLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/Python",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/XZ",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/OpenSSL",
+					"$(PROJECT_DIR)/SymbolCrashLog/Python-3.6-macOS-support.b14/BZip2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.missevan.SymbolCrashLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
