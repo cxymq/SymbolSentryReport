@@ -70,8 +70,11 @@
 
     NSString *srcFilePath = self.jsonPathTextField.stringValue;
     NSString *destFilePath = [_dest_json_path stringByAppendingPathComponent:@"/crash-report.crash"];
-    _dest_json_path = destFilePath;
     NSLog(@"json path : %@", destFilePath);
+    // 判断是否已存在，已存在则删除
+    if([[NSFileManager defaultManager] fileExistsAtPath:destFilePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:destFilePath error:nil];
+    }
 
     NSData *myJSON = [NSData dataWithContentsOfFile:srcFilePath];
 
@@ -98,7 +101,7 @@
                           encoding:NSStringEncodingConversionAllowLossy
                            error:nil];
         }
-        [self showAlertWithText:[NSString stringWithFormat:@"转换成功 \n %@", self->_dest_json_path]];
+        [self showAlertWithText:[NSString stringWithFormat:@"转换成功 \n %@", destFilePath]];
     }];
 }
 
